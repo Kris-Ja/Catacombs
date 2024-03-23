@@ -68,7 +68,7 @@ vec2 parallax(vec2 tx, float height, float accuracy, vec4 viewer){
 void main(void) {
 	//Normalized, interpolated vectors
 	vec4 mv = normalize(v);
-	vec2 tc = parallax(iTexCoord0,0.1,1000,mv);
+	vec2 tc = parallax(iTexCoord0,0.5,1000,mv);
 	vec4 mn = normalize(vec4(texture(textureMap1, tc).xyz*2-1, 0));
 
 	//Surface parameters
