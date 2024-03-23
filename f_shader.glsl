@@ -84,7 +84,7 @@ void main(void) {
 		float distance = length(vec4(lightPos[i], 1) - pos);
 		float attenuation = 1.0/(1.0 + 0.7 * distance + 1.2 * distance * distance);
 		if(obj_type != 4){
-			float theta = dot(normalize(lightPos[i].xyz-pos.xyz), vec3(0.0, 1.0, 0.0));
+			float theta = dot(normalize(lightPos[i].xyz-pos.xyz+vec3(0.0, 0.8, 0.0)), vec3(0.0, 1.0, 0.0));
 			float epsilon = 0.82 - 0.64;
 			intensity = clamp((theta - 0.64)/epsilon, 0.0, 1.0);
 		}
